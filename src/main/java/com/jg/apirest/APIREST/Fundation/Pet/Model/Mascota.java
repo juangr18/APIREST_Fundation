@@ -1,4 +1,4 @@
-package com.jg.apirest.APIREST.Model;
+package com.jg.apirest.APIREST.Fundation.Pet.Model;
 
 public class Mascota {
     private final int id;

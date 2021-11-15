@@ -1,4 +1,4 @@
-package com.jg.apirest.APIREST.Model;
+package com.jg.apirest.APIREST.Fundation.Owner.Model;
 
 public class Propietario {
     private final int id;

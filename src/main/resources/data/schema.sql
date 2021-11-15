@@ -22,5 +22,4 @@ CREATE TABLE tipo_mascota (
   PRIMARY KEY (idtipo_mascota)
 )
 
-ALTER TABLE mascota ADD CONSTRAINT mascota_fk0 FOREIGN KEY (idmascota) REFERENCES tipo_mascota (idtipo_mascota),
-                    ADD CONSTRAINT mascota_fk1 FOREIGN KEY (propietario) REFERENCES propietario (idpropietario);
+ALTER TABLE mascota ADD CONSTRAINT mascota_fk0 FOREIGN KEY (idmascota) REFERENCES tipo_mascota (idtipo_mascota), ADD CONSTRAINT mascota_fk1 FOREIGN KEY (propietario) REFERENCES propietario (idpropietario);

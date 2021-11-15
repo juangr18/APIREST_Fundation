@@ -1,6 +1,6 @@
-package com.jg.apirest.APIREST.Controller;
+package com.jg.apirest.APIREST.Fundation.Pet.Controller;
 
-import com.jg.apirest.APIREST.Model.Mascota;
+import com.jg.apirest.APIREST.Fundation.Pet.Model.Mascota;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
@@ -16,13 +16,13 @@ import java.util.UUID;
 
 @Service
 @Repository
-public class FundacionMascotas {
+public class ControllerPet {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     private final JdbcTemplate jdbcTemplate;
 
-    public FundacionMascotas(NamedParameterJdbcTemplate namedParameterJdbcTemplate, JdbcTemplate jdbcTemplate) {
+    public ControllerPet(NamedParameterJdbcTemplate namedParameterJdbcTemplate, JdbcTemplate jdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
         this.jdbcTemplate = jdbcTemplate;
     }

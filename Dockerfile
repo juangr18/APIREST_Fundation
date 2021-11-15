@@ -1,5 +1,4 @@
-FROM ubuntu:latest
-WORKDIR /
+FROM mysql:latest
 COPY "./target/app.jar" "app.jar"
-EXPOSE 80
+EXPOSE 3306
 ENTRYPOINT ["java","-jar","app.jar"]

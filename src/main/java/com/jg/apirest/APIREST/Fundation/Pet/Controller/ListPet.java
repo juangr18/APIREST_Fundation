@@ -16,13 +16,13 @@ import java.util.UUID;
 
 @Service
 @Repository
-public class ControllerPet {
+public class ListPet {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     private final JdbcTemplate jdbcTemplate;
 
-    public ControllerPet(NamedParameterJdbcTemplate namedParameterJdbcTemplate, JdbcTemplate jdbcTemplate) {
+    public ListPet(NamedParameterJdbcTemplate namedParameterJdbcTemplate, JdbcTemplate jdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
         this.jdbcTemplate = jdbcTemplate;
     }

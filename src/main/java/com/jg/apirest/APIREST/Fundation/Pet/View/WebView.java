@@ -1,6 +1,6 @@
 package com.jg.apirest.APIREST.Fundation.Pet.View;
 
-import com.jg.apirest.APIREST.Fundation.Pet.Controller.ControllerPet;
+import com.jg.apirest.APIREST.Fundation.Pet.Controller.ListPet;
 import com.jg.apirest.APIREST.Fundation.Pet.Model.Mascota;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +10,9 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/")
 public class WebView {
-    private final ControllerPet fundacionMascotas;
+    private final ListPet fundacionMascotas;
 
-    public WebView(ControllerPet fundacionMascotas) {
+    public WebView(ListPet fundacionMascotas) {
         this.fundacionMascotas = fundacionMascotas;
     }
 

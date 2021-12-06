@@ -1,40 +1,29 @@
 package com.jg.apirest.APIREST.Fundation.Pet.Controller;
 
-import com.jg.apirest.APIREST.Fundation.Commons.Validate;
 import com.jg.apirest.APIREST.Fundation.Pet.Model.Mascota;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.stereotype.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 
-import java.util.Map;
-import java.util.UUID;
 
-@Repository
 @Controller
+@Repository
 public class CreatePet {
-    public JdbcTemplate jdbcTemplate;
 
-    public Validate validate;
+    private final JdbcTemplate jdbcTemplate;
 
-    public CreatePet(JdbcTemplate jdbcTemplate, Validate validate) {
+    public CreatePet(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        this.validate = validate;
     }
 
-    public void createPet(Mascota mascota){
-        String sql = "INSERT INTO mascota VALUES(?,?,?,?);";
+    public void createPet(Mascota mascota) {
+        String sql = "INSERT INTO mascota (nombre,tipo_mascota,propietario) VALUES(?,?,?);";
         PreparedStatementSetter setter = ps -> {
-            ps.setInt(1,mascota.getId());
-            ps.setString(2,mascota.getNombre());
-            ps.setInt(3,mascota.getTipoMascota());
-            ps.setInt(4,mascota.getPropietario());
+          ps.setString(1,mascota.getNombre());
+          ps.setInt(2,mascota.getTipoMascota());
+          ps.setInt(3,mascota.getPropietario());
         };
-        validator(mascota);
         jdbcTemplate.update(sql,setter);
-    }
-    public void validator(Mascota mascota){
-        validate.validate(mascota.getId());
-        validate.validate(mascota.getNombre());
     }
 }

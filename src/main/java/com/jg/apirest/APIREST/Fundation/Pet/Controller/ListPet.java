@@ -27,7 +27,7 @@ public class ListPet {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Mascota> listDB() {
+    public List<Mascota> listPetDB() {
         String sql = "SELECT * FROM mascota;";
         return jdbcTemplate.query(sql, this::getMascota);
     }
